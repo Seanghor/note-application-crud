@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "target": "esnext", // Enable support for modern JS features
+    "module": "esnext", // Ensure compatibility with Vite's module system
+    "moduleResolution": "node", // Resolve modules like Node.js does
+    "strict": true, // Enable strict mode for better type checking
+    "esModuleInterop": true, // Ensure compatibility with CommonJS modules
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "resolveJsonModule": true, // Allow importing JSON files as modules
+    "jsx": "preserve", // Enable JSX support (if you’re using JSX with Vue)
+    "lib": [
+      "esnext",
+      "dom"
+    ], 
+    "types": [
+      "vite/client"
+    ]
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
