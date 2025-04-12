@@ -47,7 +47,9 @@ namespace NotesApplication.Controllers
             var exitingUser = await _authRepository.GetByUsernameAsync(request.Username);
             if (exitingUser == null)
                 return BadRequest("This username does not exist in the database.");
-            if(exitingUser.Password != request.Password)
+            // if(exitingUser.Password != request.Password)
+            //     return BadRequest("Password is incorrect.");
+            if(new PasswordHasher<User>().VerifyHashedPassword(exitingUser, exitingUser.Password, request.Password) == PasswordVerificationResult.Failed)
                 return BadRequest("Password is incorrect.");
             return Ok(new { id = exitingUser.Id, token = "authorized" });
         }
