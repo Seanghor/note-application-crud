@@ -16,23 +16,23 @@ Generate Table in SQL Server
   USE TestingDb;
   GO
   
-  -- Create the User table
-  CREATE TABLE [dbo].[User] (
+  -- Create the Users table
+  CREATE TABLE [dbo].[Users] (
       [Id] INT IDENTITY(1,1) PRIMARY KEY,
       [Username] NVARCHAR(255) NOT NULL,
       [Password] NVARCHAR(255) NOT NULL
   );
   GO
 
-  -- Create the Note table
-  CREATE TABLE [dbo].[Note] (
+  -- Create the Notes table
+  CREATE TABLE [dbo].[Notes] (
       [Id] INT IDENTITY(1,1) PRIMARY KEY,
       [Title] NVARCHAR(255) NOT NULL,
       [Content] NVARCHAR(MAX) NULL,    
       [Created_At] DATETIME NOT NULL DEFAULT GETDATE(),  
       [Updated_At] DATETIME NULL,       
       [UserId] INT NULL,
-      FOREIGN KEY ([UserId]) REFERENCES [dbo].[User]([Id])
+      FOREIGN KEY ([UserId]) REFERENCES [dbo].[Users]([Id])
   );
   GO
 ```
