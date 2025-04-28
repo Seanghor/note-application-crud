@@ -45,7 +45,7 @@ namespace NotesApplication.Controllers
             var userId = GetUserId();
             var note = await _noteRepository.GetByIdAsync(id);
             if (note == null)
-                return NotFound("This video note does not exist in the database.");
+                return NotFound("This note does not exist in the database.");
             if (note.UserId != userId)
                 return Unauthorized("You are not authorize to perfomce.");
             return Ok(note);

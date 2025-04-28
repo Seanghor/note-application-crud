@@ -13,7 +13,7 @@ namespace NotesApplication.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        public static User user = new ();
+        //public static User user = new ();
         private readonly IUserRepository _authRepository;
         public AuthController(IUserRepository authRepository)
         {
